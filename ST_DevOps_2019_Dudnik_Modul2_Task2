@@ -24,7 +24,7 @@ Get-Content -Path "z:\process_list.txt"
 
 # 5.	Просуммировать все числовые значения переменных текущего сеанса.
 
-$res=Get-Variable | Where-Object -FilterScript {$_.Value.GetType -like 'int*'}
+$res=Get-Variable | Where-Object -FilterScript {$_.Value.GetType() -like 'int*'}
 $res | foreach {$summ += $_.value}
 $summ
 
